@@ -18,62 +18,62 @@ license=""
 quiet="false"
 
 while [ $# -gt 0 ] ; do
-  case $1 in
-    -a | --address) 
-        address="$2"
+    case $1 in
+        -a | --address) 
+            address="$2"
 
-        if [ "$address" == "-c" ] || [ "$address" == "--city" ] || [ "$address" == "-s" ] || [ "$address" == "--state" ] || [ "$address" == "-z" ] || [ "$address" == "--zip" ] || [ "$address" == "-l" ] || [ "$address" == "--license" ] || [ "$address" == "-q" ] || [ "$address" == "--quiet" ] || [ -z "$address" ];
-        then
-            printf "${RED}Error: Missing an argument for parameter \'address\'.${NC}\n"  
-            exit 1
-        fi  
-        ;;
-	-c | --city) 
-        city="$2"
+            if [ "$address" == "-c" ] || [ "$address" == "--city" ] || [ "$address" == "-s" ] || [ "$address" == "--state" ] || [ "$address" == "-z" ] || [ "$address" == "--zip" ] || [ "$address" == "-l" ] || [ "$address" == "--license" ] || [ "$address" == "-q" ] || [ "$address" == "--quiet" ] || [ -z "$address" ];
+            then
+                printf "${RED}Error: Missing an argument for parameter \'address\'.${NC}\n"  
+                exit 1
+            fi  
+            ;;
+        -c | --city) 
+            city="$2"
 
-        if [ "$city" == "-a" ] || [ "$city" == "--address" ] || [ "$city" == "-s" ] || [ "$city" == "--state" ] || [ "$city" == "-z" ] || [ "$city" == "--zip" ] || [ "$city" == "-l" ] || [ "$city" == "--license" ] || [ "$city" == "-q" ] || [ "$city" == "--quiet" ] || [ -z "$city" ];
-        then
-            printf "${RED}Error: Missing an argument for parameter \'city\'.${NC}\n"  
-            exit 1
-        fi  
-        ;;
-	-s | --state) 
-        state="$2"
+            if [ "$city" == "-a" ] || [ "$city" == "--address" ] || [ "$city" == "-s" ] || [ "$city" == "--state" ] || [ "$city" == "-z" ] || [ "$city" == "--zip" ] || [ "$city" == "-l" ] || [ "$city" == "--license" ] || [ "$city" == "-q" ] || [ "$city" == "--quiet" ] || [ -z "$city" ];
+            then
+                printf "${RED}Error: Missing an argument for parameter \'city\'.${NC}\n"  
+                exit 1
+            fi  
+            ;;
+        -s | --state) 
+            state="$2"
 
-        if [ "$state" == "-c" ] || [ "$state" == "--city" ] || [ "$state" == "-a" ] || [ "$state" == "--address" ] || [ "$state" == "-z" ] || [ "$state" == "--zip" ] || [ "$state" == "-l" ] || [ "$state" == "--license" ] || [ "$state" == "-q" ] || [ "$state" == "--quiet" ] || [ -z "$state" ];
-        then
-            printf "${RED}Error: Missing an argument for parameter \'state\'.${NC}\n"  
-            exit 1
-        fi   
-        ;;
-	-z | --zip) 
-        zip="$2"
+            if [ "$state" == "-c" ] || [ "$state" == "--city" ] || [ "$state" == "-a" ] || [ "$state" == "--address" ] || [ "$state" == "-z" ] || [ "$state" == "--zip" ] || [ "$state" == "-l" ] || [ "$state" == "--license" ] || [ "$state" == "-q" ] || [ "$state" == "--quiet" ] || [ -z "$state" ];
+            then
+                printf "${RED}Error: Missing an argument for parameter \'state\'.${NC}\n"  
+                exit 1
+            fi   
+            ;;
+        -z | --zip) 
+            zip="$2"
 
-        if [ "$zip" == "-c" ] || [ "$zip" == "--city" ] || [ "$zip" == "-s" ] || [ "$zip" == "--state" ] || [ "$zip" == "-a" ] || [ "$zip" == "--address" ] || [ "$zip" == "-l" ] || [ "$zip" == "--license" ] || [ "$zip" == "-q" ] || [ "$zip" == "--quiet" ] || [ -z "$zip" ];
-        then
-            printf "${RED}Error: Missing an argument for parameter \'zip\'.${NC}\n"  
-            exit 1
-        fi   
-        ;;		
-    -l | --license) 
-        license="$2"
+            if [ "$zip" == "-c" ] || [ "$zip" == "--city" ] || [ "$zip" == "-s" ] || [ "$zip" == "--state" ] || [ "$zip" == "-a" ] || [ "$zip" == "--address" ] || [ "$zip" == "-l" ] || [ "$zip" == "--license" ] || [ "$zip" == "-q" ] || [ "$zip" == "--quiet" ] || [ -z "$zip" ];
+            then
+                printf "${RED}Error: Missing an argument for parameter \'zip\'.${NC}\n"  
+                exit 1
+            fi   
+            ;;		
+        -l | --license) 
+            license="$2"
 
-        if [ "$license" == "-c" ] || [ "$license" == "--city" ] || [ "$license" == "-s" ] || [ "$license" == "--state" ] || [ "$license" == "-z" ] || [ "$license" == "--zip" ] || [ "$license" == "-a" ] || [ "$license" == "--address" ] || [ "$license" == "-q" ] || [ "$license" == "--quiet" ] || [ -z "$license" ];
-        then
-            printf "${RED}Error: Missing an argument for parameter \'license\'.${NC}\n"  
-            exit 1
-        fi    
-        ;;
-    -q | --quiet) 
-        quiet="true" 
-        ;;
-  esac
-  shift
+            if [ "$license" == "-c" ] || [ "$license" == "--city" ] || [ "$license" == "-s" ] || [ "$license" == "--state" ] || [ "$license" == "-z" ] || [ "$license" == "--zip" ] || [ "$license" == "-a" ] || [ "$license" == "--address" ] || [ "$license" == "-q" ] || [ "$license" == "--quiet" ] || [ -z "$license" ];
+            then
+                printf "${RED}Error: Missing an argument for parameter \'license\'.${NC}\n"  
+                exit 1
+            fi    
+            ;;
+        -q | --quiet) 
+            quiet="true" 
+            ;;
+    esac
+    shift
 done
 
 ######################### Config ###########################
 
-RELEASE_VERSION='2023.07'
+RELEASE_VERSION='2023.08'
 ProductName="DQ_ADDR_DATA"
 
 # Uses the location of the .sh file 
@@ -136,46 +136,70 @@ DownloadDataFiles()
 
 DownloadSO() 
 {
-    printf "\nMELISSA UPDATER IS DOWNLOADING SO(s)...\n"
+    printf "\nMELISSA UPDATER IS DOWNLOADING SO(S)...\n"
     
     # Check for quiet mode
     if [ $quiet == "true" ];
     then
         ./MelissaUpdater/MelissaUpdater file --filename $Config_FileName1 --release_version $Config_ReleaseVersion1 --license $1 --os $Config_OS1 --compiler $Config_Compiler1 --architecture $Config_Architecture1 --type $Config_Type1 --target_directory $BuildPath  &> /dev/null
         
+        if [ $? -ne 0 ];
+        then
+            printf "\nCannot run Melissa Updater. Please check your license string!\n"
+            exit 1
+        fi        
+        
         printf "Melissa Updater finished downloading $Config_FileName1!\n"
 
         ./MelissaUpdater/MelissaUpdater file --filename $Config_FileName2 --release_version $Config_ReleaseVersion2 --license $1 --os $Config_OS2 --compiler $Config_Compiler2 --architecture $Config_Architecture2 --type $Config_Type2 --target_directory $ProjectPath  &> /dev/null
+        
+        if [ $? -ne 0 ];
+        then
+            printf "\nCannot run Melissa Updater. Please check your license string!\n"
+            exit 1
+        fi        
         
         printf "Melissa Updater finished downloading $Config_FileName2!\n"
 
         ./MelissaUpdater/MelissaUpdater file --filename $Config_FileName3 --release_version $Config_ReleaseVersion3 --license $1 --os $Config_OS3 --compiler $Config_Compiler3 --architecture $Config_Architecture3 --type $Config_Type3 --target_directory $ProjectPath  &> /dev/null
         
-        printf "Melissa Updater finished downloading $Config_FileName3!\n"
-
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
-        fi
+        fi        
+        
+        printf "Melissa Updater finished downloading $Config_FileName3!\n"
     else
         ./MelissaUpdater/MelissaUpdater file --filename $Config_FileName1 --release_version $Config_ReleaseVersion1 --license $1 --os $Config_OS1 --compiler $Config_Compiler1 --architecture $Config_Architecture1 --type $Config_Type1 --target_directory $BuildPath  
+        
+        if [ $? -ne 0 ];
+        then
+            printf "\nCannot run Melissa Updater. Please check your license string!\n"
+            exit 1
+        fi        
         
         printf "Melissa Updater finished downloading $Config_FileName1!\n"
         
         ./MelissaUpdater/MelissaUpdater file --filename $Config_FileName2 --release_version $Config_ReleaseVersion2 --license $1 --os $Config_OS2 --compiler $Config_Compiler2 --architecture $Config_Architecture2 --type $Config_Type2 --target_directory $ProjectPath  
         
+        if [ $? -ne 0 ];
+        then
+            printf "\nCannot run Melissa Updater. Please check your license string!\n"
+            exit 1
+        fi        
+        
         printf "Melissa Updater finished downloading $Config_FileName2!\n"
         
         ./MelissaUpdater/MelissaUpdater file --filename $Config_FileName3 --release_version $Config_ReleaseVersion3 --license $1 --os $Config_OS3 --compiler $Config_Compiler3 --architecture $Config_Architecture3 --type $Config_Type3 --target_directory $ProjectPath  
-
-        printf "Melissa Updater finished downloading $Config_FileName3!\n"
 
         if [ $? -ne 0 ];
         then
             printf "\nCannot run Melissa Updater. Please check your license string!\n"
             exit 1
         fi
+
+        printf "Melissa Updater finished downloading $Config_FileName3!\n"
     fi
 }
 
@@ -211,24 +235,23 @@ CheckSOs()
 ########################## Main ############################
 
 printf "\n====================== Melissa Address Object ======================\n                      [ C++ | Linux | 64BIT ]\n"
-printf "\n=========================== BUILD PROJECT ==========================\n"
 # Get license (either from parameters or user input)
 if [ -z "$license" ];
 then
-  printf "Please enter your license string: "
-  read license
+    printf "Please enter your license string: "
+    read license
 fi
 
 # Check for License from Environment Variables 
 if [ -z "$license" ];
 then
-  license=`echo $MD_LICENSE` 
+    license=`echo $MD_LICENSE` 
 fi
 
 if [ -z "$license" ];
 then
-  printf "\nLicense String is invalid!\n"
-  exit 1
+    printf "\nLicense String is invalid!\n"
+    exit 1
 fi
 
 # Use Melissa Updater to download data file(s) 
