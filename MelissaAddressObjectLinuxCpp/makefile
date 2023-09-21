@@ -3,7 +3,7 @@
 CXX = g++
 CXXFLAGS = -Wall -Wextra -pedantic -std=c++11 -g
 LDLIBS = -lmdAddr
-LDFLAGS = -L/home/emaiiii/MdLinuxExamples/melissaaddressobjectlinuxcpp/MelissaAddressObjectLinuxCpp/Build
+LDFLAGS = -L/home/emaiiii/MdLinuxExamples/AddressObject-Cpp-Linux/MelissaAddressObjectLinuxCpp/Build
 RM = rm -f
 
 OUT_DIR = Build
