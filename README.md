@@ -30,7 +30,7 @@ And return
 ## Tested Environments
 - Linux 64-bit g++ 9.4.0, Ubuntu 20.04.05 LTS
 - GNU Make 4.2.1
-- Melissa data files for 2024-09
+- Melissa data files for 2024-10
 
 ## Required Files and Programs
 
@@ -107,8 +107,8 @@ Once you have finished the installations, you should be able to verify that they
 
 #### Download this project
 ```
-$ git clone https://github.com/MelissaData/AddressObject-Cpp-Linux
-$ cd AddressObject-Cpp-Linux
+git clone https://github.com/MelissaData/AddressObject-Cpp-Linux
+cd AddressObject-Cpp-Linux
 ```
 
 #### Set up Melissa Updater 
@@ -167,11 +167,11 @@ When you have modified the script to match your data location, let's run the scr
     
     The script will prompt the user for an address, city, state, and zip, then use the provided inputs to test Address Object. For example:
     ```
-    $ ./MelissaAddressObjectLinuxCpp.sh
+    ./MelissaAddressObjectLinuxCpp.sh
     ```
     For quiet mode:
     ```
-    $ ./MelissaAddressObjectLinuxCpp.sh --quiet
+    ./MelissaAddressObjectLinuxCpp.sh --quiet
     ```
 
 - Command Line
@@ -180,20 +180,20 @@ When you have modified the script to match your data location, let's run the scr
 
     With all parameters:
     ```
-    $ ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --city "Rancho Santa Margarita" --state "CA" --zip "92688"
-    $ ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --city "Rancho Santa Margarita" --state "CA" --zip "92688" --license "<your_license_string>"
+    ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --city "Rancho Santa Margarita" --state "CA" --zip "92688"
+    ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --city "Rancho Santa Margarita" --state "CA" --zip "92688" --license "<your_license_string>"
     ```
 
     With any known (optional) parameters:
     ```
-    $ ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --state "CA" 
-    $ ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --state "CA" --license "<your_license_string>"
+    ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --state "CA" 
+    ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --state "CA" --license "<your_license_string>"
     ```
 
     For quiet mode:
     ```
-    $ ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --city "Rancho Santa Margarita" --state "CA" --zip "92688" --quiet
-    $ ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --city "Rancho Santa Margarita" --state "CA" --zip "92688" --license "<your_license_string>" --quiet
+    ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --city "Rancho Santa Margarita" --state "CA" --zip "92688" --quiet
+    ./MelissaAddressObjectLinuxCpp.sh --address "22382 Avenida Empresa" --city "Rancho Santa Margarita" --state "CA" --zip "92688" --license "<your_license_string>" --quiet
     ```
 This is the expected outcome of a successful setup for interactive mode:
 
