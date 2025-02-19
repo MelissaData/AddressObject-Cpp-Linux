@@ -30,7 +30,7 @@ And return
 ## Tested Environments
 - Linux 64-bit g++ 9.4.0, Ubuntu 20.04.05 LTS
 - GNU Make 4.2.1
-- Melissa data files for 2025-01
+- Melissa data files for 2025-02
 
 ## Required Files and Programs
 
