@@ -114,8 +114,8 @@ Once you have finished the installations, you should be able to verify that they
 
 #### Download this project
 ```
-git clone https://git.melissadata.com/dtgroup/melissadataobjectexamples/cpp/melissaaddressobjectlinuxcpp.git
-cd melissaaddressobjectlinuxcpp
+git clone https://github.com/MelissaData/AddressObject-Cpp-Linux
+cd AddressObject-Cpp-Linux
 ```
 
 #### Set up Melissa Updater 
